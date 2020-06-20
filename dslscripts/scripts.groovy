@@ -7,7 +7,7 @@ jenkins.model.Jenkins.theInstance.getProjects().each { job ->
 job('job-dsl-checkout') {
     
     scm {
-        github('tetradev01/hello-world-war', 'master')
+        github('smiles7v/hello-world-war', 'master')
     }
       
    publishers {
@@ -41,7 +41,7 @@ job('job-dsl-deploy') {
     description 'Deploy app to the demo server'
     
     steps{
-             shell 'sshpass -p "123456" scp /var/lib/jenkins/workspace/job-dsl-checkout/target/hello-world-war-1.0.0.war release@10.12.108.11:/opt/tomcat/webapps/'
+             shell 'sshpass -p "123456" scp /var/lib/jenkins/workspace/job-dsl-checkout/target/hello-world-war-1.0.0.war /temp'
       }
 }
 
