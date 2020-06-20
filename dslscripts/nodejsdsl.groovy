@@ -1,7 +1,7 @@
 job('nodejs-dsl-checkout') {
     
     scm {
-        github('tetradev01/nodejsapp', 'master')
+        github('smiles7v/nodejsapp', 'master')
     }
   
    publishers {
@@ -39,7 +39,7 @@ job('nodejs-dsl-test'){
 job('nodejs-dsl-archive'){
 	configure { project ->
         project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
-            siteName 'release@10.12.108.11:22'
+            siteName 'cloud_user@52.17.238.176'
             postScript """        
             	tar -zcvf /var/archive/app.tar.gz /var/myapp/           
 	      """
@@ -54,7 +54,7 @@ job('nodejs-dsl-archive'){
 job('nodejs-dsl-deploy'){
 	configure { project ->
         project / buildWrappers / 'org.jvnet.hudson.plugins.SSHBuildWrapper' {
-            siteName 'release@10.12.108.11:22'
+            siteName 'cloud_user@52.17.238.176'
             postScript """        
             	cd /var/myapp
             	git pull origin master
