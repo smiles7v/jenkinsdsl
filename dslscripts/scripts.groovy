@@ -41,7 +41,7 @@ job('job-dsl-deploy') {
     description 'Deploy app to the demo server'
     
     steps{
-             shell 'cp /var/lib/jenkins/workspace/job-dsl-checkout/target/hello-world-war-1.0.0.war /var/lib/jenkins/workspace/job-dsl-checkout/'
+             shell 'cp /var/lib/jenkins/workspace/job-dsl-checkout/target/hello-world-war-1.0.0.war /opt/tomcat/webapps/'
       }
 }
 
