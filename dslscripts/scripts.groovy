@@ -41,7 +41,7 @@ job('job-dsl-deploy') {
     description 'Deploy app to the demo server'
     
     steps{
-             shell 'sshpass -p "123456" scp /var/lib/jenkins/workspace/job-dsl-checkout/target/hello-world-war-1.0.0.war /temp'
+             shell 'cp /var/lib/jenkins/workspace/job-dsl-checkout/target/hello-world-war-1.0.0.war /temp'
       }
 }
 
